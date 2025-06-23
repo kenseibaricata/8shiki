@@ -1,16 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React from 'react';
 import PatientHeader from '../../components/PatientHeader';
 import { 
-  ArrowLeft, 
   Calendar, 
   CheckCircle, 
   Clock, 
   AlertCircle,
-  User,
-  FileText,
   Stethoscope,
   MapPin,
   Phone
@@ -27,15 +23,6 @@ interface TreatmentItem {
 }
 
 export default function TreatmentPlanPage() {
-  const [activeTab, setActiveTab] = useState('timeline');
-
-  const patientInfo = {
-    name: '田中 花子',
-    patientId: '12345',
-    startDate: '2024-06-01',
-    expectedCompletion: '2024-07-15'
-  };
-
   const treatmentPlan: TreatmentItem[] = [
     {
       id: 1,

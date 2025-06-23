@@ -1,23 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import PatientHeader from '../components/PatientHeader';
 import { 
   Calendar, 
   MessageCircle, 
-  User, 
   Clock, 
   ArrowRight,
-  LogOut,
-  Bell,
   Heart,
   Smartphone,
   MapPin
 } from 'lucide-react';
 
 export default function PatientDashboardPage() {
-  const [activeTab, setActiveTab] = useState('overview');
 
   // サンプル患者データ
   const patientInfo = {

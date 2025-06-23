@@ -1,17 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import PatientHeader from '../components/PatientHeader';
 import { 
-  ArrowLeft, 
   Crown, 
   Star, 
   Check, 
   Zap, 
   Shield, 
-  Calendar,
-  Heart,
   Sparkles
 } from 'lucide-react';
 
@@ -32,7 +28,7 @@ interface ClubPlan {
 
 export default function ClubPage() {
   const [isYearly, setIsYearly] = useState(false);
-  const [currentPlan, setCurrentPlan] = useState<string>('basic');
+  const [currentPlan] = useState<string>('basic');
   
   const plans: ClubPlan[] = [
     {
@@ -307,7 +303,6 @@ export default function ClubPage() {
             ご不明な点がございましたら、お気軽にお問い合わせください
           </p>
           <div className="flex items-center justify-center space-x-4">
-            <Calendar className="h-5 w-5 text-blue-600" />
             <span className="text-sm text-gray-700">📞 092-XXX-XXXX（受付時間：9:00-18:00）</span>
           </div>
         </div>

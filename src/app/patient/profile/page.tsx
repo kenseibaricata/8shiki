@@ -105,14 +105,14 @@ export default function PatientProfilePage() {
     setIsEditing(false);
   };
 
-  const updateProfile = (field: string, value: any) => {
+  const updateProfile = (field: string, value: string) => {
     setEditedProfile(prev => ({
       ...prev,
       [field]: value
     }));
   };
 
-  const updateNestedProfile = (section: string, field: string, value: any) => {
+  const updateNestedProfile = (section: string, field: string, value: string) => {
     setEditedProfile(prev => ({
       ...prev,
       [section]: {

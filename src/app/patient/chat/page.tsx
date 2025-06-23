@@ -1,17 +1,12 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import PatientHeader from '../../components/PatientHeader';
 import { 
-  ArrowLeft, 
   Send, 
-  MessageCircle, 
   Bot, 
   User,
-  Clock,
   AlertCircle,
-  Heart,
   Lightbulb
 } from 'lucide-react';
 

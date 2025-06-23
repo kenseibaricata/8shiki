@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Stethoscope, Key, Hash, Eye, EyeOff } from 'lucide-react';
+import { ArrowLeft, Stethoscope, Hash, Eye, EyeOff } from 'lucide-react';
 
 export default function PatientLoginPage() {
   const [formData, setFormData] = useState({

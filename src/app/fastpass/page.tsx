@@ -1,16 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import PatientHeader from '../components/PatientHeader';
 import { 
-  ArrowLeft, 
   Calendar, 
   Clock, 
   Star,
   User,
   Check,
-  Zap,
   Crown,
   ChevronLeft,
   ChevronRight
@@ -83,7 +80,7 @@ export default function FastPassPage() {
   ];
 
   // タイムスロットデータ（選択された日付に基づいて生成）
-  const generateTimeSlots = (date: Date): TimeSlot[] => {
+  const generateTimeSlots = (_date: Date): TimeSlot[] => {
     const slots: TimeSlot[] = [];
     
     // 9:00-18:00の30分刻み
