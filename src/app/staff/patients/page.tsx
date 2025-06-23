@@ -258,7 +258,7 @@ export default function PatientsPage() {
                   <select
                     id="status-filter"
                     value={statusFilter}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatusFilter(e.target.value as any)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatusFilter(e.target.value as 'all' | 'active' | 'completed' | 'cancelled')}
                     className="block w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="all">全てのステータス</option>
@@ -276,7 +276,7 @@ export default function PatientsPage() {
                   <select
                     id="sort-by"
                     value={sortBy}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as any)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as 'name' | 'lastVisit' | 'nextAppointment')}
                     className="block w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="name">名前順</option>

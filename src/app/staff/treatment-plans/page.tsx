@@ -325,7 +325,7 @@ export default function TreatmentPlansPage() {
                   <Filter className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <select
                     value={statusFilter}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatusFilter(e.target.value as any)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatusFilter(e.target.value as 'all' | 'planned' | 'in-progress' | 'completed' | 'cancelled')}
                     className="block w-full pl-10 pr-8 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="all">全てのステータス</option>
@@ -343,7 +343,7 @@ export default function TreatmentPlansPage() {
                 <div className="relative">
                   <select
                     value={priorityFilter}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setPriorityFilter(e.target.value as any)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setPriorityFilter(e.target.value as 'all' | 'low' | 'medium' | 'high' | 'urgent')}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="all">全ての優先度</option>
@@ -361,7 +361,7 @@ export default function TreatmentPlansPage() {
                 <div className="relative">
                   <select
                     value={sortBy}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as any)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as 'plannedDate' | 'createdDate' | 'priority' | 'patientName')}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="plannedDate">予定日順</option>

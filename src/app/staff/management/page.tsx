@@ -142,17 +142,6 @@ export default function StaffManagementPage() {
     }
   };
 
-  const getStatusIcon = (status: StaffMember['status']) => {
-    switch (status) {
-      case 'approved':
-        return <CheckCircle className="h-4 w-4 text-green-600" />;
-      case 'pending':
-        return <Clock className="h-4 w-4 text-yellow-600" />;
-      case 'suspended':
-        return <AlertCircle className="h-4 w-4 text-red-600" />;
-    }
-  };
-
   const getRoleBadgeColor = (role: string) => {
     switch (role) {
       case '院長':
@@ -273,7 +262,7 @@ export default function StaffManagementPage() {
                 <select
                   id="status-filter"
                   value={filterStatus}
-                  onChange={(e) => setFilterStatus(e.target.value as any)}
+                  onChange={(e) => setFilterStatus(e.target.value as 'all' | 'pending' | 'approved' | 'suspended')}
                   className="w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                 >
                   <option value="all">全てのステータス</option>

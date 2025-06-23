@@ -38,7 +38,7 @@ export default function FastPassPage() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
   // ユーザープラン情報
-  const userPlan = 'silver'; // 'basic' | 'silver' | 'gold'
+  const userPlan: 'basic' | 'silver' | 'gold' = 'silver';
 
   // スタッフデータ
   const staffMembers: StaffMember[] = [
@@ -78,7 +78,7 @@ export default function FastPassPage() {
   ];
 
   // タイムスロットデータ（選択された日付に基づいて生成）
-  const generateTimeSlots = (_date: any): TimeSlot[] => {
+  const generateTimeSlots = (): TimeSlot[] => {
     const slots: TimeSlot[] = [];
     
     // 9:00-18:00の30分刻み
@@ -112,7 +112,7 @@ export default function FastPassPage() {
     return slots;
   };
 
-  const timeSlots = generateTimeSlots(selectedDate);
+  const timeSlots = generateTimeSlots();
 
   // カレンダー用のヘルパー関数
   const getDaysInMonth = (date: Date) => {
