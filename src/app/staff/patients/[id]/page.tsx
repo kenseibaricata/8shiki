@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { 
   ArrowLeft, 
   User, 
@@ -45,13 +46,16 @@ interface ChatMessage {
   sender?: string;
 }
 
-export default function PatientDetailPage({ params }: { params: { id: string } }) {
+export default function PatientDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
+  
   const [activeTab, setActiveTab] = useState<'treatment' | 'chat'>('treatment');
   const [newMessage, setNewMessage] = useState('');
 
   // サンプル患者データ
   const patient: Patient = {
-    id: params.id,
+    id: id,
     name: '田中 花子',
     age: 35,
     phone: '092-123-4567',
