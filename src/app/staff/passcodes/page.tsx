@@ -80,7 +80,7 @@ export default function PasscodesPage() {
     alert(`${patientId}の新しいパスコード: ${newPasscode}`);
   };
 
-  const copyPasscode = async (passcode: string, patientName: string) => {
+  const copyPasscode = async (passcode: string, _patientName: string) => {
     try {
       await navigator.clipboard.writeText(passcode);
       setCopiedPasscode(passcode);

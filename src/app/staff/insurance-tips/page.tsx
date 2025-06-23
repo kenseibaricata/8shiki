@@ -1,19 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { 
-  ArrowLeft, 
   Search, 
-  Filter,
-  BookOpen,
   TrendingUp,
   Target,
-  Award,
   Info,
   CheckCircle,
-  Clock,
-  Star
 } from 'lucide-react';
 import StaffHeader from '../../components/StaffHeader';
 

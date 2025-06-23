@@ -16,7 +16,6 @@ import {
   MapPin,
   AlertTriangle,
   ChevronDown,
-  ArrowRight,
   User
 } from 'lucide-react';
 
@@ -40,7 +39,6 @@ export default function PatientsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'completed' | 'cancelled'>('all');
   const [sortBy, setSortBy] = useState<'name' | 'lastVisit' | 'nextAppointment'>('name');
-  const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
 
   // サンプル患者データ
   const patients: Patient[] = [
@@ -258,11 +256,12 @@ export default function PatientsPage() {
                 <div className="relative">
                   <Filter className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <select
+                    id="status-filter"
                     value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value as any)}
-                    className="block w-full pl-10 pr-8 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatusFilter(e.target.value as any)}
+                    className="block w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="all">全ての患者</option>
+                    <option value="all">全てのステータス</option>
                     <option value="active">治療中</option>
                     <option value="completed">治療完了</option>
                     <option value="cancelled">治療中断</option>
@@ -275,9 +274,10 @@ export default function PatientsPage() {
               <div className="lg:w-48">
                 <div className="relative">
                   <select
+                    id="sort-by"
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as any)}
+                    className="block w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="name">名前順</option>
                     <option value="lastVisit">最終来院日順</option>

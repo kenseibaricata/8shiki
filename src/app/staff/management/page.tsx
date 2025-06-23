@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { 
-  ArrowLeft, 
   Users, 
   Search,
   UserCheck,
@@ -15,8 +13,7 @@ import {
   CheckCircle,
   AlertCircle,
   Clock,
-  Plus,
-  MoreVertical
+  Plus
 } from 'lucide-react';
 import StaffHeader from '../../components/StaffHeader';
 
@@ -274,11 +271,12 @@ export default function StaffManagementPage() {
               
               <div className="flex space-x-2">
                 <select
+                  id="status-filter"
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value as any)}
-                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                  className="w-full pl-8 pr-2 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <option value="all">すべてのステータス</option>
+                  <option value="all">全てのステータス</option>
                   <option value="approved">承認済み</option>
                   <option value="pending">承認待ち</option>
                   <option value="suspended">停止中</option>

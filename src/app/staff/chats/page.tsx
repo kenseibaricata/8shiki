@@ -5,16 +5,13 @@ import Link from 'next/link';
 import StaffHeader from '../../components/StaffHeader';
 import { 
   Search, 
-  Filter,
   MessageCircle,
   Bot,
   User,
   Calendar,
   Clock,
-  Eye,
   Reply,
   AlertTriangle,
-  CheckCircle,
   ChevronDown,
   Send
 } from 'lucide-react';
@@ -34,14 +31,6 @@ interface ChatSession {
   assignedStaff?: string;
   category: 'general' | 'pain' | 'appointment' | 'treatment' | 'billing' | 'emergency';
   isUnread: boolean;
-}
-
-interface ChatMessage {
-  id: string;
-  type: 'patient' | 'ai' | 'staff';
-  content: string;
-  timestamp: string;
-  sender?: string;
 }
 
 export default function ChatsPage() {
@@ -341,7 +330,7 @@ export default function ChatsPage() {
                 <div className="relative">
                   <select
                     value={typeFilter}
-                    onChange={(e) => setTypeFilter(e.target.value as any)}
+                    onChange={(e) => setTypeFilter(e.target.value as typeof typeFilter)}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="all">全ての種類</option>
@@ -357,7 +346,7 @@ export default function ChatsPage() {
                 <div className="relative">
                   <select
                     value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value as any)}
+                    onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="all">全てのステータス</option>
@@ -375,7 +364,7 @@ export default function ChatsPage() {
                 <div className="relative">
                   <select
                     value={categoryFilter}
-                    onChange={(e) => setCategoryFilter(e.target.value as any)}
+                    onChange={(e) => setCategoryFilter(e.target.value as typeof categoryFilter)}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="all">全ての分類</option>
@@ -395,7 +384,7 @@ export default function ChatsPage() {
                 <div className="relative">
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
+                    onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
                     className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
                     <option value="lastActivity">最新活動順</option>

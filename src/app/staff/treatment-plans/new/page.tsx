@@ -5,15 +5,11 @@ import Link from 'next/link';
 import { 
   ArrowLeft, 
   Calendar, 
-  Plus, 
   Save,
   Search,
   User,
-  CheckCircle,
-  AlertCircle,
   Clock,
   X,
-  Edit3
 } from 'lucide-react';
 
 interface Patient {

@@ -1,19 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { 
   Users, 
   Calendar, 
   MessageCircle, 
-  Plus, 
-  Search, 
-  Settings, 
-  LogOut, 
-  Bell,
-  FileText,
   Key,
-  Clock,
   TrendingUp,
   UserPlus,
   BookOpen
@@ -21,8 +14,6 @@ import {
 import StaffHeader from '../components/StaffHeader';
 
 export default function StaffDashboardPage() {
-  const [activeTab, setActiveTab] = useState('overview');
-  const [searchTerm, setSearchTerm] = useState('');
 
   // サンプルデータ
   const recentPatients = [
