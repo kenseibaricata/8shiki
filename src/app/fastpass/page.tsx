@@ -38,7 +38,7 @@ export default function FastPassPage() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
   // ユーザープラン情報
-  const userPlan: 'basic' | 'silver' | 'gold' = 'silver';
+  const userPlan = 'silver' as 'basic' | 'silver' | 'gold';
 
   // スタッフデータ
   const staffMembers: StaffMember[] = [
